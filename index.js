@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// #loader
+
 //sidebar
 function w3_open() {
   document.getElementById("main").style.marginLeft = "25%";
@@ -42,7 +44,7 @@ function checkOut() {
       x.previousElementSibling.className.replace(" w3-blue", "");
   }
 }
-
+// #sidebar
 // greeting visitors
 var myDate = new Date();
 var hrs = myDate.getHours();
@@ -61,3 +63,4 @@ else if (hrs >= 17 && hrs <= 24)
 
 document.getElementById("greetings").innerHTML = "<b>" + greet + "</b>";
 // #greeting visitors
+

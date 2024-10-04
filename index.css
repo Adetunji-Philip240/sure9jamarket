@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /*designing the body*/
 body {
   background-image: url("/images/backimage.jpg");
@@ -87,12 +92,62 @@ body {
   background-color: rgba(240, 173, 78, 0.5);
   border-radius: 30px;
   padding: 10px;
+  font-style: italic;
+  font-family: cursive;
 }
+
+.prod_serv_h {
+  background-color: rgba(240, 173, 78, 0.5);
+  border-radius: 30px;
+  padding: 10px;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 10px;
+}
+.prod_serv_p {
+  background-color: rgba(30, 144, 255, 0.5);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* For mobile */
 @media screen and (max-width: 767px) {
   .card {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+  .prod_serv_h {
+    letter-spacing: 5px;
+  }
+}
+
+/*For slides */
+.carousel-item img {
+  width: 100%; /* Responsive width */
+  max-height: 400px; /* Set a maximum height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+.carousel-caption {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent background for better readability */
+  padding: 10px; /* Add some padding */
+  bottom: 20px; /* Position it closer to the bottom */
+  border-radius: 50px;
+}
+/* For mobile */
+@media (max-width: 767px) {
+  .carousel-caption h5 {
+    font-size: 1.2rem; /* Adjust caption title size for small screens */
+  }
+  .carousel-caption p {
+    font-size: 0.9rem; /* Adjust caption description size for small screens */
   }
 }

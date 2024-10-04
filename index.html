@@ -44,12 +44,20 @@
           <a href="products.html" class="w3-bar-item w3-button" target="_blank"
             >Products</a
           >
-          <a href="#" class="w3-bar-item w3-button">Services</a>
+          <a href="services.html" class="w3-bar-item w3-button" target="_blank"
+            >Services</a
+          >
         </div>
 
-        <a href="#" class="w3-bar-item w3-button">Sell here</a>
-        <a href="#" class="w3-bar-item w3-button">About us</a>
-        <a href="#" class="w3-bar-item w3-button">Contact us</a>
+        <a
+          href="sms:07061166390?body=Let us know what you want to sell"
+          class="w3-bar-item w3-button"
+          >Sell here</a
+        >
+        <a href="#section-aboutus" class="w3-bar-item w3-button">About us</a>
+        <a href="https://wa.me/7061166390" class="w3-bar-item w3-button"
+          >Contact us</a
+        >
       </div>
 
       <!--The whole contents-->
@@ -65,7 +73,14 @@
             &#9776;
           </button>
           <div class="w3-container">
-            <h1 style="font-family: impact; text-align: center">
+            <h1
+              style="
+                font-style: italic;
+                font-family: cursive;
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+              "
+            >
               SURE9JAMARKET
             </h1>
           </div>
@@ -76,7 +91,16 @@
           <!--First body section-->
           <div class="section_one">
             <div class="section_content">
-              <h2>Best Place to get nice products and services</h2>
+              <h2
+                style="
+                  font-style: italic;
+                  font-family: cursive;
+                  font-weight: bold;
+                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                "
+              >
+                Best Place to get nice products and services
+              </h2>
               <p>
                 Here, we make online shopping effortless by offering a wide
                 variety of high-quality products and services, including stylish
@@ -234,7 +258,11 @@
                   computer engineering class with us
                 </p>
                 <br />
-                <a href="#" class="btn btn-primary">Check me out</a>
+                <a
+                  href="https://murphycomputershop.netlify.app/"
+                  class="btn btn-primary"
+                  >Check me out</a
+                >
               </div>
             </div>
             <!--2. Rimamcloset-->
@@ -254,7 +282,11 @@
                   quality and luxurious items🥰, being your personal shopper
                   isn't bad also🤗
                 </p>
-                <a href="#" class="btn btn-primary">Check me out</a>
+                <a
+                  href="market/rimamcloset/rimamcloset.html"
+                  class="btn btn-primary"
+                  >Check me out</a
+                >
               </div>
             </div>
             <!--3. Milady-->
@@ -331,7 +363,11 @@
                   <br />
                   <br />
                 </p>
-                <a href="#" class="btn btn-primary">Check me out</a>
+                <a
+                  href="/market/essence and beauty/essence+beauty.html"
+                  class="btn btn-primary"
+                  >Check me out</a
+                >
               </div>
             </div>
             <!--7. Sweet treats heaven-->
@@ -397,7 +433,14 @@
           <div class="container-fluid mt-3">
             <div class="row">
               <div class="col-sm-6 bg-primary text-white p-3">
-                <h3 id="section-aboutus" style="text-decoration: underline">
+                <h3
+                  id="section-aboutus"
+                  style="
+                    text-decoration: underline;
+                    font-style: italic;
+                    font-family: cursive;
+                  "
+                >
                   About us
                 </h3>
                 <p>
@@ -420,7 +463,15 @@
                 >
               </div>
               <div class="col-sm-6 bg-dark text-white p-3">
-                <h3 style="text-decoration: underline">About the Creator</h3>
+                <h3
+                  style="
+                    text-decoration: underline;
+                    font-style: italic;
+                    font-family: cursive;
+                  "
+                >
+                  About the Creator
+                </h3>
                 <img
                   class="rounded-circle"
                   src="images/wale.png"
@@ -456,9 +507,17 @@
           </div>
           <!--Comment section-->
           <div class="container mt-3">
-            <h4 style="text-decoration: underline">Drop a comment</h4>
+            <h4
+              style="
+                text-decoration: underline;
+                font-style: italic;
+                font-family: cursive;
+              "
+            >
+              Drop a comment
+            </h4>
             <p>Tell us how you feel about a product/service from a seller</p>
-            <form action="" method="post">
+            <form id="customers-comment" action="#" method="post">
               <div class="mb-3 mt-3">
                 <input
                   type="text"
@@ -478,11 +537,14 @@
                   placeholder="Enter your phone number"
                   required
                 />
+                <span class="error" id="errorMessage"
+                  >Please enter a valid Nigerian phone number.</span
+                >
               </div>
               <div class="mb-3">
                 <input
                   type="text"
-                  id="seller"
+                  id="seller_name"
                   class="form-control"
                   name="Seller"
                   placeholder="Enter the name of the seller's brand"
@@ -508,12 +570,23 @@
                   name="comment"
                   required
                 ></textarea>
+                <span
+                  style="display: none; color: red"
+                  id="comment_errorMessage"
+                  >Negative numbers are not allowed in the comment
+                  section.</span
+                >
               </div>
               <div class="mt-3">
-                <button type="submit" class="btn btn-outline-primary">
+                <button
+                  id="submitBtn"
+                  type="submit"
+                  class="btn btn-outline-primary"
+                >
                   Submit
                 </button>
               </div>
+              <div class="number_error" id="number_errorMessage"></div>
             </form>
           </div>
           <!--Footer-->
@@ -572,5 +645,93 @@
 
     <!--External js-->
     <script src="index.js"></script>
+
+    <!--Internal js-->
+    <script>
+      // phone number
+      document
+        .getElementById("customers-comment")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting
+
+          const phoneInput = document.getElementById("phone").value;
+          const errorMessage = document.getElementById("errorMessage");
+
+          // Regex for validating Nigerian phone number
+          const nigeriaPhoneRegex = /^0[789]0\d{8}$/;
+
+          if (nigeriaPhoneRegex.test(phoneInput)) {
+            errorMessage.style.display = "none";
+            this.submit();
+            // You can proceed with form submission or further processing here
+          } else {
+            errorMessage.style.display = "block";
+            errorMessage.style.color = "red";
+          }
+        });
+      // #phone number
+
+      // not allowing negative number in the comment
+      const comment = document.getElementById("comment");
+      const comment_errorMessage = document.getElementById(
+        "comment_errorMessage"
+      );
+
+      comment.addEventListener("input", function () {
+        // Regular expression to match negative numbers
+        const negativeNumberPattern = /-\d+/g;
+
+        // Check for negative numbers in the input
+        if (negativeNumberPattern.test(this.value)) {
+          // Remove negative numbers from the input value
+          this.value = this.value.replace(negativeNumberPattern, "");
+          comment_errorMessage.style.display = "inline"; // Show error message
+        } else {
+          comment_errorMessage.style.display = "none"; // Hide error message
+        }
+      });
+      // #not allowing negative number in the comment
+
+      //Not allowing number in fullname, seller's name, and product-service name
+      function validateName(name) {
+        return /^[a-zA-Z\s]*$/.test(name);
+      }
+
+      document
+        .getElementById("submitBtn")
+        .addEventListener("click", function () {
+          const fullName = document.getElementById("full_name").value;
+          const sellName = document.getElementById("seller_name").value;
+          const product_service =
+            document.getElementById("product_service").value;
+          const number_errorMessage = document.getElementById(
+            "number_errorMessage"
+          );
+
+          number_errorMessage.textContent = ""; // Clear previous error messages
+
+          let hasError = false;
+
+          if (!validateName(fullName)) {
+            number_errorMessage.textContent +=
+              "Full Name should only contain letters and spaces.\n";
+            hasError = true;
+          }
+          if (!validateName(sellName)) {
+            number_errorMessage.textContent +=
+              "Seller's Name should only contain letters and spaces.\n";
+            hasError = true;
+          }
+          if (!validateName(product_service)) {
+            number_errorMessage.textContent +=
+              "The name of the product/service should only contain letters and spaces.\n";
+            hasError = true;
+          }
+          if (hasError) {
+            event.preventDefault(); // Prevent form submission
+          }
+        });
+      //#Not allowing number in fullname, seller's name, and product-service name
+    </script>
   </body>
 </html>
