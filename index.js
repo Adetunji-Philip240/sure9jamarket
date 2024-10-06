@@ -20,6 +20,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // #loader
 
+// Advertisement
+// Function to show the pop-up and overlay
+function showPopup(popupId) {
+  document.getElementById(popupId).style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
+
+// Function to close the pop-up
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
+
+// Show the first pop-up when the page loads
+window.onload = function () {
+  showPopup("popup1");
+
+  // Show the second pop-up after 30 seconds
+  setTimeout(function () {
+    showPopup("popup2");
+  }, 30000); // 30000 milliseconds = 30 seconds
+
+  // Show the third pop-up after 60 seconds
+  setTimeout(function () {
+    showPopup("popup3");
+  }, 60000); // 60000 milliseconds = 60 seconds
+};
+
+// Close the pop-up when the overlay is clicked
+document.getElementById("overlay").onclick = function () {
+  closePopup("popup1");
+  closePopup("popup2");
+  closePopup("popup3");
+};
+
 //sidebar
 function w3_open() {
   document.getElementById("main").style.marginLeft = "25%";
@@ -63,4 +98,3 @@ else if (hrs >= 17 && hrs <= 24)
 
 document.getElementById("greetings").innerHTML = "<b>" + greet + "</b>";
 // #greeting visitors
-
